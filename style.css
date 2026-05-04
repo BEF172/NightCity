@@ -688,3 +688,82 @@ header nav {
     position: relative;
     z-index: 1;
 }
+
+
+/* CELULARES/TABLETAS */
+@media (max-width: 768px) {
+
+    /* NAVBAR → vertical */
+    header nav {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li {
+        border-right: none;
+        border-bottom: 1px solid rgba(252, 238, 10, 0.2);
+        justify-content: center;
+    }
+
+    .nav-list a {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* HERO TEXT (BIENVENIDA) */
+    .welcome {
+        margin-left: 1rem;
+        margin-top: 3rem;
+        width: 90%;
+        padding-bottom: 6rem;
+    }
+
+    .welcome h1 {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+    }
+
+    .welcome h3 {
+        font-size: 0.9rem;
+    }
+
+    /* GRID CRÍMENES → 1 columna */
+    .crimenes ul {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .crimenes li:first-child {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* MERCENARIOS */
+    .mercenarios {
+        grid-template-columns: 1fr;
+        padding-inline: 1rem;
+    }
+
+    .mujer-cyberpunk {
+        width: 100%;
+    }
+
+    /* TEXTO GENERAL */
+    .text {
+        font-size: 14px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 0.65rem;
+        padding: 1rem;
+    }
+}
