@@ -258,14 +258,12 @@ img {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        #05080d 0%,              /* 👈 IGUAL al body */
-        rgba(5, 8, 13, 0.95) 10%,
-        rgba(5, 8, 13, 0.7) 25%,
+        #05080d 0%,
         rgba(0, 0, 0, 0.3) 45%,
         rgba(0, 0, 0, 0.3) 55%,
         rgba(5, 8, 13, 0.7) 75%,
         rgba(5, 8, 13, 0.95) 90%,
-        #05080d 100%             /* 👈 tu gradiente final */
+        #05080d 100%
     );
     pointer-events: none;
 }
@@ -617,7 +615,7 @@ header nav {
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: clamp(10rem, 4vw, 5rem);
-    margin-top: 5rem;
+    margin-top: 13.5rem;
     position: relative;
     width: min(90vw, 600px);
     max-width: 600px;
