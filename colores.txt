@@ -1,0 +1,114 @@
+Paleta Cyberpunk (Night City Terminal)
+=======================================
+Colores, gradientes y efectos visuales del sistema
+
+
+FONDOS Y PANELES
+----------------
+--bg-deep          #0a0e14
+--bg-panel         #0f1419cc   (rgba con alfa, efecto cristal)
+body-bg            #05080d     fondo principal del sitio
+
+
+NEÓN PRINCIPALES
+----------------
+--cyan-neon        #00e5ff     cian brillante (HUD principal)
+--blue-neon        #38b6ff     azul neón suave
+
+
+AMARILLO / UI CLÁSICA
+---------------------
+--yellow-ui        #fcee0a     amarillo estilo Cyberpunk 2077
+
+
+VERDES
+------
+--lime-neon        #bfff00     verde lima neón
+--green-neon       #00ff85     verde neón brillante
+
+
+ROSA / MAGENTA / MORADO
+-----------------------
+--pink-neon        #ff2a6d     rosa/magenta intenso
+--magenta          #fb00ff     magenta púrpura brillante
+--purple-neon      #be00ff     morado eléctrico
+
+
+TEXTO
+-----
+--text             #ffffff     blanco principal
+--text-muted       #8a9ba8     gris azulado (texto secundario)
+
+
+BORDES Y UI
+-----------
+--border-hud       rgba(0, 229, 255, 0.22)   borde HUD translúcido
+
+
+EFECTOS VISUALES (CAPAS)
+------------------------
+--grid             rgba(0, 229, 255, 0.06)   rejilla de fondo
+--scan             rgba(0, 255, 133, 0.03)   líneas de escaneo
+
+
+GRADIENTES (OVERLAYS DE IMAGEN)
+-------------------------------
+
+Nightcity / Fondos principales:
+linear-gradient(
+    to bottom,
+    #05080d 0%,
+    rgba(5, 8, 13, 0.95) 10%,
+    rgba(5, 8, 13, 0.7) 25%,
+    rgba(0, 0, 0, 0.3) 45%,
+    rgba(0, 0, 0, 0.3) 55%,
+    rgba(5, 8, 13, 0.7) 75%,
+    rgba(5, 8, 13, 0.95) 90%,
+    #05080d 100%
+)
+
+Uso:
+- Oscurecer bordes (viñeta vertical)
+- Integrar imágenes con el fondo
+- Evitar cortes bruscos
+
+
+Overlay dinámico (scroll glow):
+radial-gradient(
+    circle at 50% 50%,
+    rgba(252, 238, 10, calc(var(--scroll-overlay) * 0.3)),
+    transparent
+)
+
+Uso:
+- Efecto glow amarillo dinámico tipo HUD
+
+
+FILTROS DE IMAGEN
+-----------------
+
+Fondos (Nightcity, mercenarios):
+filter: brightness(0.55) blur(2px);
+
+Uso:
+- Oscurecer imagen base
+- Dar profundidad
+- Resaltar contenido encima
+
+
+NOTAS DE DISEÑO
+---------------
+- Base: fondos ultra oscuros (#05080d)
+- Capas: overlays con rgba para integración
+- Neon: colores saturados para contraste extremo
+- Blur + brightness: clave para estética cyberpunk
+- Gradientes: evitan cortes duros y crean atmósfera
+
+RECOMENDACIONES PRO
+-------------------
+- Convertir body-bg en variable (--bg-main)
+- Reutilizar gradiente como variable CSS
+- Centralizar filtros en variables si escalás el proyecto
+
+Ejemplo:
+--img-darken: brightness(0.55) blur(2px);
