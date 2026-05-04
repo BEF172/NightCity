@@ -32,6 +32,7 @@
     --pink-neon: #ff2a6d;
     --purple-neon: #be00ff;
     --magenta: #fb00ff;
+
     --grid: rgba(0, 229, 255, 0.06);
     --scan: rgba(0, 255, 133, 0.03);
     --text: white;
@@ -808,7 +809,7 @@ header nav {
     .welcome h3 {
         margin-left: 0;
         font-size: 0.85rem;
-        
+
     }
 
     /* 3. DIVISORES ESTILO HUD */
@@ -890,4 +891,46 @@ header nav {
         padding: 0.8rem 1.5rem;
         font-size: 0.75rem;
     }
+}
+
+/* ACERCADE */
+.acercade-page {
+    font-family: "Blender Pro Bold", monospace;
+}   
+.acercade-page .background {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    z-index: -2;
+}
+
+.acercade-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.acercade-page .texto {
+    padding-top: 1.8rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
+    color: var(--bg-deep);
+    font-size: 1.3rem;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+}
+.acercade-page .ultimo-texto {
+    font-size: 1.2rem;
+}
+.acercade-page .logo-acercade{
+    width: 28rem;
+    height: auto;
+}
+.acercade-page .texto a{
+    display: inline-block; /* Hace que el enlace solo ocupe lo que mide la imagen */
 }
