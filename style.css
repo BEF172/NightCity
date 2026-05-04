@@ -705,50 +705,97 @@ header nav {
 
 
 /* CELULARES/TABLETAS */
+/* --- OPTIMIZACIÓN PARA MÓVILES Y TABLETS --- */
 @media (max-width: 768px) {
+    
+    /* 1. HEADER Y NAVEGACIÓN */
+    /* Cambiamos a relative para que el logo no flote sobre el contenido de abajo */
+    .content-nav {
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        padding-top: 1.5rem;
+        gap: 1.5rem;
+    }
 
-    /* NAVBAR → vertical */
+    .logo {
+        padding: 0;
+        margin: 0 auto;
+        width: min(280px, 80%); /* Logo más manejable en móvil */
+    }
+
     header nav {
+        width: 100%;
         justify-content: center;
-        margin-top: 15px;
+        padding-inline: 1rem;
     }
 
     .nav-list {
         flex-direction: column;
         width: 100%;
+        --cut: 15px; /* Reducimos el ángulo del corte para ganar espacio interno */
     }
 
     .nav-list li {
         border-right: none;
         border-bottom: 1px solid rgba(252, 238, 10, 0.2);
-        justify-content: center;
+        width: 100%;
     }
 
     .nav-list a {
         padding: 1rem;
         text-align: center;
-    }
-
-    /* HERO TEXT (BIENVENIDA) */
-    .welcome {
-        margin-left: 1rem;
-        margin-top: 3rem;
-        width: 90%;
-        padding-bottom: 6rem;
-    }
-
-    .welcome h1 {
-        font-size: clamp(2.2rem, 8vw, 3rem);
-    }
-
-    .welcome h3 {
         font-size: 0.9rem;
     }
 
-    /* GRID CRÍMENES → 1 columna */
+    /* 2. SECCIÓN DE BIENVENIDA (HERO) */
+    .welcome {
+        margin-left: 0;
+        margin-top: 2rem;
+        width: 100%;
+        padding-inline: 1.5rem;
+        padding-bottom: 4rem;
+        text-align: center; /* Centramos para mejor balance visual */
+        align-items: center;
+    }
+
+    .welcome h1 {
+        font-size: clamp(2.5rem, 12vw, 3.8rem);
+        line-height: 1;
+    }
+
+    .welcome h3 {
+        margin-left: 0;
+        font-size: 0.85rem;
+    }
+
+    /* 3. DIVISORES ESTILO HUD */
+    .cp-divider {
+        padding-inline: 1rem;
+    }
+
+    .cp-divider__row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .cp-divider__right {
+        margin-inline: auto;
+        justify-content: center;
+    }
+
+    /* 4. GRID DE CRÍMENES (NOTICIAS) */
+    .crimenes {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 1rem;
+    }
+
     .crimenes ul {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una sola columna */
         grid-template-rows: auto;
+        gap: 2rem;
     }
 
     .crimenes li:first-child {
@@ -756,28 +803,46 @@ header nav {
         grid-row: auto;
     }
 
-    /* MERCENARIOS */
+    .crimenes li img {
+        aspect-ratio: 16 / 9; /* Forzamos formato panorámico en móvil */
+    }
+
+    /* 5. SECCIÓN MERCENARIOS */
     .mercenarios {
         grid-template-columns: 1fr;
         padding-inline: 1rem;
+        gap: 3rem;
     }
 
     .mujer-cyberpunk {
         width: 100%;
+        border-width: 6px; /* Borde un poco más delgado */
     }
 
-    /* TEXTO GENERAL */
+    /* 6. TIPOGRAFÍA Y FOOTER */
     .text {
         font-size: 14px;
+        line-height: 1.4;
     }
 
-    .subtitle {
-        font-size: 18px;
-    }
-
-    /* FOOTER */
     footer {
         font-size: 0.65rem;
-        padding: 1rem;
+        padding: 2rem 1rem;
+    }
+
+    footer p {
+        text-align: center;
+    }
+}
+
+/* Ajuste extra para celulares muy pequeños (iPhone SE, etc.) */
+@media (max-width: 380px) {
+    .welcome h1 {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.75rem;
     }
 }
