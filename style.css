@@ -896,41 +896,57 @@ header nav {
 /* ACERCADE */
 .acercade-page {
     font-family: "Blender Pro Bold", monospace;
-}   
-.acercade-page .background {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    width: 100%;
+    margin: 0;
+    /* Movimos el fondo aquí para que siempre cubra todo el contenido */
+    background-image: url("imagenes/fondodisculpas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* El fondo se queda quieto al scrollear */
     min-height: 100vh;
-    z-index: -2;
+    display: flex;
+    flex-direction: column;
 }
 
-.acercade-page img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
+/* Eliminamos el div background viejo porque ya no lo necesitamos */
+.acercade-page .background {
+    display: none;
 }
 
 .acercade-page .texto {
-    padding-top: 1.8rem;
-    padding-left: 9rem;
-    padding-right: 9rem;
+    padding: 1.8rem 9rem;
     color: var(--bg-deep);
     font-size: 1.3rem;
-    text-decoration: none;
-    letter-spacing: 0.01em;
+    flex-grow: 1; /* Hace que el contenedor ocupe todo el espacio */
 }
-.acercade-page .ultimo-texto {
-    font-size: 1.2rem;
-}
-.acercade-page .logo-acercade{
+
+.acercade-page .logo-acercade {
     width: 28rem;
     height: auto;
 }
-.acercade-page .texto a{
-    display: inline-block; /* Hace que el enlace solo ocupe lo que mide la imagen */
+.acercade-page .titulo{
+    font-family: "refinery-25-bold", monospace;
+}
+
+/* --- Media Query para Celulares --- */
+@media (max-width: 768px) {
+    .acercade-page .texto {
+        /* Bajamos el padding exagerado de 9rem a 1.5rem */
+        padding: 2rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .acercade-page .logo-acercade {
+        /* Ajustamos el logo para que no rompa el ancho en celulares */
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .acercade-page .texto h2 {
+        font-size: 1.6rem;
+    }
+
+    .acercade-page .ultimo-texto {
+        font-size: 1.1rem;
+        padding-bottom: 3rem; /* Espacio para que no quede pegado al borde inferior */
+    }
 }
