@@ -346,13 +346,29 @@ footer p {
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
+
+.content-nav {
+    display: flex;
+    justify-content: space-between; /* Separa el logo a la izquierda y el nav a la derecha */
+    align-items: center;           /* <--- Esto centra ambos verticalmente */
+    height: 7rem;
+    position: absolute;            /* Para que flote sobre la imagen de fondo */
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
 header nav {
-    margin-top: 30px;
     display: flex;
     justify-content: flex-end;
     padding-inline: clamp(0.75rem, 3vw, 1.5rem);
+    
 }
 
+.logo {
+    padding: 1rem 0 0 2.5rem;
+    width: 380px; /* Redúcelo si 300px es mucho para el nav */
+    height: auto;
+}
 /* Menú tipo Cyberpunk con forma trapezoidal */
 .nav-list {
     --cut: 20px; 
@@ -620,8 +636,8 @@ header nav {
     width: min(90vw, 600px);
     max-width: 600px;
     gap: 0.7rem;
-    padding-bottom: 20rem;
-    padding-top: 2rem;
+    padding-bottom: 22rem;
+    padding-top: 6rem;
 }
 .welcome h1{
     font-family: "refinery-25-bold","SDGlitch", "Orbitron", "Share Tech Mono", sans-serif;
